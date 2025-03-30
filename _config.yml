@@ -1,0 +1,5 @@
+title: My Awesome Blog
+description: Blog posts auto-published from Google Sheets
+theme: minima
+plugins:
+  - jekyll-feed
