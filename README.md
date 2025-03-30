@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<a href="post1.html">Read Post 1</a>
+<a href="post2.html">Read Post 1</a>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
