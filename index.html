@@ -2,63 +2,301 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Free AI Tools for Job Seekers – TalentLampAI</title>
+  <title>Career Tools & Job Blogs</title>
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      padding: 30px;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f2f7ff, #d9eaff);
+    }
+    header {
+      background-color: #004085;
+      color: #fff;
+      padding: 40px 5%;
+      text-align: center;
+    }
+    .tools-info, .search-container, .blog-section, footer {
+      padding: 20px 5%;
+      width: 90%;
+      margin: auto;
+    }
+    #searchInput {
+      width: 100%;
+      max-width: 800px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    .card {
+      max-width: 100%;
+      width: 100%;
+      background: #fff;
+      border-left: none;
+      border-radius: 10px;
+      box-shadow: none;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+    }
+    .title {
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #004085;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .summary {
+      font-size: 1em;
+      line-height: 1.5;
+      color: #333;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+    .view-more {
+      background: linear-gradient(to right, #004085, #007bff);
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.8em;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease-in-out;
+    }
+    .view-more:hover {
+      background: linear-gradient(to right, #002752, #0056b3);
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 95%;
+      max-width: 900px;
+    }
+    .modal-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #004085;
+    }
+    .modal-body {
+      font-size: 1em;
+      line-height: 1.6;
       color: #333;
     }
-    h1 {
-      color: #0066cc;
+    .modal-body h2,
+    .modal-body h3,
+    .modal-body h4 {
+      margin: 1em 0 0.5em;
+      font-weight: bold;
     }
-    .tool {
-      background: #fff;
+    .modal-body p,
+    .modal-body br {
+      margin: 0;
+      padding: 0;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
+    .pagination {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .pagination button {
+      background: #004085;
+      color: white;
+      border: none;
+      margin: 2px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .pagination button.active {
+      background: #007bff;
+    }
+    footer {
+      background-color: #004085;
+      color: #fff;
+      text-align: center;
       padding: 20px;
-      margin-bottom: 20px;
-      border-left: 5px solid #0073e6;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-
-  <h1>🚀 Top Free AI Tools That Make Your Job Hunt 10x Smarter</h1>
-  <p><strong>Posted by:</strong> Prabhu | <strong>Published on:</strong> March 29, 2025</p>
-  <hr>
-
-  <p>Looking for a job in 2025? Don't waste hours doing everything manually. These AI tools will help you write resumes, analyze job descriptions, generate interview questions, and more – all for free! 🧠⚡</p>
-
-  <div class="tool">
-    <h2>1. Resume Summary Generator</h2>
-    <p>Just paste your resume, and this tool will create a powerful 3-line summary using GPT. Perfect for quick applications or your LinkedIn "About Me" section.</p>
+  <header>
+    <h1>Welcome to Career Tools & Job Mastery</h1>
+    <p>Explore the best tools, resources, and expert tips to supercharge your job hunt</p>
+  </header>
+  <section class="tools-info">
+    <h2>What You'll Learn Here</h2>
+    <p>🧰 Resume Builders • Cover Letter Generators • Job Tracking Tools • AI-Powered Interview Practice • LinkedIn Optimization • Email Templates • ATS Scanners</p>
+    <p>Whether you're a fresher or a professional, this is your one-stop dashboard to master every step of the job search journey!</p>
+  </section>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search blog posts..." oninput="filterPosts()">
   </div>
-
-  <div class="tool">
-    <h2>2. Job Tracker Template</h2>
-    <p>Use Airtable or Google Sheets to track applied jobs, interview dates, follow-ups, and offer status – all in one place.</p>
+  <section class="blog-section">
+    <h2>Latest Job Blog Updates</h2>
+    <div id="blog-container"></div>
+    <div id="error-message"></div>
+    <div class="pagination" id="pagination"></div>
+  </section>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalTitle" class="modal-title"></div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
   </div>
+  <footer>
+    “The future belongs to those who prepare for it today.” – Malcolm X
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script>
+    let allPosts = [], filteredPosts = [], currentPage = 1;
+    const postsPerPage = 10;
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2zMrAocsGDen3FxPe8kw34pJlMvaN7H6ae0WfT08P1XvPmRmqkPYB_HUsdhrw0Q1Yhsnfj1atLNLU/pub?output=csv';
 
-  <div class="tool">
-    <h2>3. LinkedIn Headline Generator</h2>
-    <p>This AI tool creates high-conversion headlines for your profile to grab recruiter attention instantly. Updated with the latest 2025 trends.</p>
-  </div>
+    Papa.parse(sheetURL, {
+      download: true,
+      header: true,
+      complete: function(results) {
+        const data = results.data;
+        const keys = Object.keys(data[0]).map(k => k.trim());
+        const titleKey = keys.find(k => k.toLowerCase() === 'blog post titles');
+        const bodyKey = keys.find(k => k.toLowerCase() === 'blog post');
+        if (!titleKey || !bodyKey) {
+          document.getElementById('error-message').textContent = 'Required columns not found in the sheet.';
+          return;
+        }
+        allPosts = data.map(row => ({ title: row[titleKey], body: row[bodyKey] })).filter(post => post.title && post.body);
+        filteredPosts = allPosts;
+        paginatePosts(1);
+      },
+      error: function() {
+        document.getElementById('error-message').textContent = 'Failed to load data from the sheet.';
+      }
+    });
 
-  <div class="tool">
-    <h2>4. Email Template Generator</h2>
-    <p>Write perfect cold emails, thank-you notes, and follow-up messages without stress. Copy-paste and customize!</p>
-  </div>
+    function paginatePosts(page = 1, posts = filteredPosts) {
+      currentPage = page;
+      const totalPages = Math.ceil(posts.length / postsPerPage);
+      const sliced = posts.slice((page - 1) * postsPerPage, page * postsPerPage);
+      renderPosts(sliced);
+      const container = document.getElementById('pagination');
+      container.innerHTML = '';
+      if (page > 1) {
+        const prev = document.createElement('button');
+        prev.textContent = 'Previous';
+        prev.onclick = () => paginatePosts(page - 1, posts);
+        container.appendChild(prev);
+      }
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        if (i === page) btn.classList.add('active');
+        btn.onclick = () => paginatePosts(i, posts);
+        container.appendChild(btn);
+      }
+      if (page < totalPages) {
+        const next = document.createElement('button');
+        next.textContent = 'Next';
+        next.onclick = () => paginatePosts(page + 1, posts);
+        container.appendChild(next);
+      }
+    }
 
-  <div class="tool">
-    <h2>5. Interview Question Generator</h2>
-    <p>Get technical + HR questions based on your target role, using GPT magic. Great for mock interviews and prep!</p>
-  </div>
+    function renderPosts(posts) {
+      const container = document.getElementById('blog-container');
+      container.innerHTML = '';
+      posts.forEach(post => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="title" data-title="${encodeURIComponent(post.title)}" data-body="${encodeURIComponent(post.body)}">${post.title}</div>
+          <div class="summary">${post.body}</div>
+          <button class="view-more" data-title="${encodeURIComponent(post.title)}" data-body="${encodeURIComponent(post.body)}">Read More</button>
+        `;
+        container.appendChild(card);
+      });
+      document.querySelectorAll('.view-more, .title').forEach(element => {
+        element.addEventListener('click', () => {
+          const title = decodeURIComponent(element.getAttribute('data-title'));
+          const body = decodeURIComponent(element.getAttribute('data-body'));
+          openModal(title, convertMarkdownToHTML(body));
+        });
+      });
+    }
 
-  <p>💡 These tools are part of the <strong>TalentLampAI Free Tools Suite</strong> – helping job seekers stand out with the power of AI. No coding needed. No fluff.</p>
+    function filterPosts() {
+      const keyword = document.getElementById('searchInput').value.toLowerCase();
+      filteredPosts = allPosts.filter(post =>
+        post.title.toLowerCase().includes(keyword) || post.body.toLowerCase().includes(keyword)
+      );
+      paginatePosts(1);
+    }
 
-  <p>👉 <a href="https://prabhudasuj23.github.io/">Back to Blog Home</a></p>
+    function openModal(title, content) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalBody').innerHTML = content;
+      document.getElementById('myModal').style.display = 'block';
+    }
 
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    function convertMarkdownToHTML(text) {
+      return text
+        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+        .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('myModal');
+      if (event.target == modal) modal.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
